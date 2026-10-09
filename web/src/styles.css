@@ -1,0 +1,396 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #0b1020;
+  color: #eef2ff;
+  overflow: hidden;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------------------------------------------------
+   HEADER
+--------------------------------------------------------- */
+
+header {
+  height: 86px;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #11182b;
+  border-bottom: 1px solid #26304a;
+  z-index: 10;
+}
+
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #818cf8;
+}
+
+h1 {
+  margin: 2px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  margin: 2px 0 0;
+  opacity: 0.65;
+  font-size: 13px;
+}
+
+.status-badge {
+  padding: 8px 14px;
+  border: 1px solid #34415f;
+  background: #1e293b;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.status-badge.complete {
+  border-color: #10b981;
+  color: #34d399;
+}
+
+.status-badge.failed,
+.status-badge.error {
+  border-color: #ef4444;
+  color: #f87171;
+}
+
+.status-badge.submitting,
+.status-badge.running {
+  border-color: #f59e0b;
+  color: #fbbf24;
+}
+
+/* ---------------------------------------------------------
+   MAIN & SIDEBAR
+--------------------------------------------------------- */
+
+main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+aside {
+  width: 320px;
+  min-width: 320px;
+  padding: 22px;
+  background: #11182b;
+  border-right: 1px solid #26304a;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  opacity: 0.75;
+  margin-bottom: 6px;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #34415f;
+  border-radius: 8px;
+  background: #0b1020;
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+input[type="date"]:focus {
+  border-color: #6366f1;
+}
+
+/* ---------------------------------------------------------
+   BUTTONS
+--------------------------------------------------------- */
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background: #eef2ff;
+  color: #0b1020;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity 0.2s, background-color 0.2s;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #ffffff;
+}
+
+.btn-primary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  color: #eef2ff;
+  border: 1px solid #34415f;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #1e293b;
+  border-color: #475569;
+}
+
+.btn-secondary:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ---------------------------------------------------------
+   CARDS & PANELS
+--------------------------------------------------------- */
+
+.aoi-box,
+.job,
+.legend,
+.message {
+  padding: 12px 14px;
+  border: 1px solid #26304a;
+  background: #0d1527;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.aoi-box strong,
+.legend strong,
+.message strong,
+.job span.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.aoi-box span,
+.message span,
+small,
+.legend-item {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  background: #172033;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #26304a;
+  color: #93c5fd;
+  word-break: break-all;
+}
+
+/* ---------------------------------------------------------
+   LAYER TOGGLES
+--------------------------------------------------------- */
+
+.legend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+button.layer-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin: 0;
+  padding: 6px 0;
+  background: transparent;
+  border: none;
+  color: #eef2ff;
+  font: inherit;
+  font-size: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+
+button.layer-toggle:hover:not(:disabled) {
+  color: #93c5fd;
+}
+
+button.layer-toggle:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.hazard-swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 0, 0, 0.5);
+  border: 2px solid #ff0000;
+  border-radius: 2px;
+}
+
+/* ---------------------------------------------------------
+   MAP WRAPPER & CONTROLS
+--------------------------------------------------------- */
+
+.map-wrap {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.mapboxgl-ctrl-group {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35) !important;
+  border: none !important;
+  overflow: hidden;
+}
+
+.mapboxgl-ctrl-group button {
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background-color: #ffffff !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+
+.mapboxgl-ctrl-group button:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* Add to bottom of web/src/styles.css */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.stat-card {
+  padding: 10px;
+  background: #0d1527;
+  border: 1px solid #26304a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #eef2ff;
+}
+
+.stat-label {
+  font-size: 11px;
+  opacity: 0.7;
+  line-height: 1.2;
+}
+
+.provenance-box {
+  padding: 10px 12px;
+  background: #090e1a;
+  border: 1px dashed #26304a;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.provenance-box strong {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.prov-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prov-row code {
+  font-size: 10px;
+  padding: 2px 4px;
+}
+
+.badge-cache {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid #10b981;
+  color: #34d399;
+  letter-spacing: 0.5px;
+}
+
+/* MapLibre Popup Styling */
+.maplibregl-popup-content {
+  background: #ffffff !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+  padding: 12px 14px !important;
+}
+
+.maplibregl-popup-close-button {
+  font-size: 16px !important;
+  color: #475569 !important;
+  padding: 4px 6px !important;
+}

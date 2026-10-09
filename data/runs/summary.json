@@ -1,0 +1,10 @@
+{
+  "aoi": "examples/trishuli.geojson",
+  "flood_date": "2026-08-26",
+  "mode": "baseline",
+  "osm_snapshot": "2026-07-27T00:00:00Z",
+  "total_settlements": 31,
+  "cut_off_settlements": 1,
+  "damaged_road_segments": 1271,
+  "total_buildings": 42978
+}

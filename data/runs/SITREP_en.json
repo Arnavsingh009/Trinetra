@@ -1,0 +1,14 @@
+{
+  "report_id": "SITREP-2026-08-26",
+  "generated_at": "2026-10-09 20:17:17 UTC",
+  "flood_date": "2026-08-26",
+  "osm_snapshot": "2026-07-27T00:00:00Z",
+  "total_settlements": 0,
+  "settlements_cut_off": 0,
+  "foot_cut_off": 0,
+  "pedestrian_accessible_only": 0,
+  "damaged_road_segments": 4448,
+  "total_buildings": 42169,
+  "hospitals_monitored": 93,
+  "triage_records": []
+}
